@@ -67,7 +67,7 @@ CREATE TABLE fact_student_performance (
     g2         INT CHECK (g2 BETWEEN 0 AND 20),
     g3         INT CHECK (g3 BETWEEN 0 AND 20),
 
-    -- Constraints
+
     CONSTRAINT fk_student
         FOREIGN KEY (student_id) REFERENCES dim_student(student_id),
 
@@ -83,13 +83,3 @@ CREATE TABLE fact_student_performance (
     CONSTRAINT uq_student_subject UNIQUE (student_id, subject_id)
 );
 
-/*
-ALTER TABLE
-    `Fact_Student_Performance` ADD CONSTRAINT `fact_student_performance_school_id_foreign` FOREIGN KEY(`school_id`) REFERENCES `Dim_School`(`school_id`);
-ALTER TABLE
-    `Fact_Student_Performance` ADD CONSTRAINT `fact_student_performance_family_id_foreign` FOREIGN KEY(`family_id`) REFERENCES `Dim_Family`(`family_id`);
-ALTER TABLE
-    `Fact_Student_Performance` ADD CONSTRAINT `fact_student_performance_subject_id_foreign` FOREIGN KEY(`subject_id`) REFERENCES `Dim_Subject`(`subject_id`);
-ALTER TABLE
-    `Fact_Student_Performance` ADD CONSTRAINT `fact_student_performance_student_id_foreign` FOREIGN KEY(`student_id`) REFERENCES `Dim_Student`(`student_id`);
-*/

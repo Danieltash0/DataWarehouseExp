@@ -20,5 +20,3 @@ def build_dim_family(raw_df):
 def build_dim_school(raw_df):
     dim = raw_df[["school", "reason", "schoolsup", "paid", "activities", "nursery", "higher", "internet"]].drop_duplicates()
     return dim.rename(columns={"reason": "school_reason", "schoolsup": "school_support", "paid": "paid_classes", "activities": "extracurricular_activities", "nursery": "nursery_attendance"})
-
-def

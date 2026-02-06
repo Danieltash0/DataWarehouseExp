@@ -8,4 +8,6 @@ def extract_raw_data():
     por_df["subject_name"] = "Portuguese"
 
     raw_df = pd.concat([mat_df, por_df], ignore_index=True)
+   # print(raw_df.columns.tolist())
     return raw_df
+    

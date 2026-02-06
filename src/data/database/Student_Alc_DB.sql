@@ -41,7 +41,7 @@ CREATE TABLE dim_subject (
 
 
 CREATE TABLE fact_student_performance (
-    performance_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    performance_id INT AUTO_INCREMENT PRIMARY KEY,
 
     -- Foreign Keys
     student_id INT NOT NULL,

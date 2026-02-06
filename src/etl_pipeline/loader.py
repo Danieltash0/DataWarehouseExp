@@ -6,3 +6,4 @@ def load_dimension(raw_df, table_name):
 
 def load_fact(raw_df):
     raw_df.to_sql("fact_student_performance", engine, if_exists='append', index=False)
+

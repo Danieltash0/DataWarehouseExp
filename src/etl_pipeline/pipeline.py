@@ -4,7 +4,7 @@ from transformer import (transform_data, build_dim_student, build_dim_subject, b
 from loader import (load_dimension, load_fact)
 
 def run_pipeline():
-    # Extract
+    # Extract 
     raw_df = extract_raw_data()
     
     # Transform

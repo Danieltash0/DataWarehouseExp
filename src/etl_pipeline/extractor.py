@@ -1,13 +1,22 @@
 import pandas as pd
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent.parent  # Go up from etl_pipeline/ to src/
+DATA_DIR = BASE_DIR / "data" / "raw"
 
 def extract_raw_data():
-    mat_df = pd.read_csv("data/raw/student-mat.csv", sep=";")
-    por_df = pd.read_csv("data/raw/student-por.csv", sep=";")
+    mat_path = DATA_DIR / "student-mat.csv"
+    por_path = DATA_DIR / "student-por.csv"
+
+    mat_df = pd.read_csv(mat_path, sep=",")
+    por_df = pd.read_csv(por_path, sep=",")
 
     mat_df["subject_name"] = "Math"
     por_df["subject_name"] = "Portuguese"
 
     raw_df = pd.concat([mat_df, por_df], ignore_index=True)
-   # print(raw_df.columns.tolist())
+
+    # Debug safety check (keep this for now)
+    #print("RAW COLUMNS AFTER EXTRACT:", raw_df.columns.tolist())
+
     return raw_df
-    

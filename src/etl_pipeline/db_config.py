@@ -3,5 +3,5 @@ DB_CONFIG = {
     "password": "12345",
     "host": "localhost",
     "port": 3306,
-    "database": "Student_Alc_DW"
+    "database": "student_alc_dw"
 }
